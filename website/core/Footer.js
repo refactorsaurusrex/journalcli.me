@@ -37,17 +37,17 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
-              Getting Started (or other categories)
+            <a href={this.docUrl('getting-started', this.props.language)}>
+              Getting Started Guide
             </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
-              Guides (or other categories)
+            <a href={this.docUrl('faq', this.props.language)}>
+              FAQ
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              API Reference (or other categories)
+            <a href={this.docUrl('recipes', this.props.language)}>
+              PowerShell Recipes
             </a>
           </div>
-          <div>
+          {/* <div>
             <h5>Community</h5>
             <a href={this.pageUrl('users.html', this.props.language)}>
               User Showcase
@@ -65,11 +65,21 @@ class Footer extends React.Component {
               rel="noreferrer noopener">
               Twitter
             </a>
+          </div> */}
+          <div>
+            <h5>Icon Credits</h5>
+            <a href="https://www.flaticon.com/authors/smashicons">NoteBook Icon by Smashicons</a>
+            <a href="https://www.flaticon.com/authors/freepik">Hand & Dove Icon by Freepik</a>
+            <a href="https://www.flaticon.com/authors/smashicons">Tag Icon by Smashicons</a>
+            <a href="https://www.flaticon.com/authors/simpleicon">Computer Icon by SimpleIcon</a>
+            <a href="https://www.flaticon.com/authors/freepik">Clock Icon by Freepik</a>
+            <a href="https://www.flaticon.com/authors/freepik">Angel Bracket Icon by Freepik</a>
+            <a href="https://www.flaticon.com/authors/freepik">Padlock Icon by Freepik</a>
           </div>
           <div>
             <h5>More</h5>
-            <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
+            <a href="https://refactorsaurusrex.com/">Blog</a>
+            <a href="https://github.com/refactorsaurusrex/journal-cli">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}

@@ -37,7 +37,7 @@ class HomeSplash extends React.Component {
 
     const ProjectTitle = () => (
       <h2 className="projectTitle">
-        {siteConfig.title}
+        {/* {siteConfig.title} */}
         <small>{siteConfig.tagline}</small>
       </h2>
     );
@@ -60,13 +60,13 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
+        <Logo img_src={`${baseUrl}img/notebook.svg`} />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href={docUrl('getting-started')}>Getting Started</Button>
+            <Button href={docUrl('faq')}>FAQ</Button>
+            <Button href={docUrl('features')}>Features</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -105,13 +105,10 @@ class Index extends React.Component {
       <Block id="try">
         {[
           {
-            content:
-              'To make your landing page more attractive, use illustrations! Check out ' +
-              '[**unDraw**](https://undraw.co/) which provides you with customizable illustrations which are free to use. ' +
-              'The illustrations you see on this page are from unDraw.',
-            image: `${baseUrl}img/undraw_code_review.svg`,
+            content:"`journal-cli` can serve as notebook for tracking anything you need at work, from summaries of 1:1 conversations to daily notes that can be later aggregated into a list of accomplishments. Use tags so you can quickly return all related entries in a single go. Use [encryption](/docs/encryption) to keep your notes private.",
+            image: `${baseUrl}img/professional.svg`,
             imageAlign: 'left',
-            title: 'Wonderful SVG Illustrations',
+            title: '...and the professional.',
           },
         ]}
       </Block>
@@ -121,11 +118,10 @@ class Index extends React.Component {
       <Block background="dark">
         {[
           {
-            content:
-              'This is another description of how this project is useful',
-            image: `${baseUrl}img/undraw_note_list.svg`,
+            content:"Use tags to categorize your entries. Use readme's to write notes to your future self. [Open a random](/docs/features#open-randomentry) entry to see what happened at some arbitrary point in the past. Never forget an important or not-so-important event again.",
+            image: `${baseUrl}img/calendar.svg`,
             imageAlign: 'right',
-            title: 'Description',
+            title: 'Keep track of your life over time.',
           },
         ]}
       </Block>
@@ -135,30 +131,60 @@ class Index extends React.Component {
       <Block background="light">
         {[
           {
-            content:
-              'Each new Docusaurus project has **randomly-generated** theme colors.',
-            image: `${baseUrl}img/undraw_youtube_tutorial.svg`,
+            content:"Take note of the little day-to-day events, right along with the bigger things, that make up your daily life today so you can reflect on them in the future. Think back 10 years... wouldn't it be interesting to glimpse into all the little things from that period that you've long since forgotten about? You don't have to write a daily essay; even a list of bullet points is all you need. \n\n ```plaintext\n# Wednesday, November 10 \n - Had breakfast with Nora this morning. Hadn't seen her in months.\n - Ran 10 miles at the trail downtown. My pace was a new personal best! \n- Watched two episodes of Blue Bloods with the wife. We're already on season 5.",
+            image: `${baseUrl}img/personal.svg`,
             imageAlign: 'right',
-            title: 'Randomly Generated Theme Colors',
+            title: 'For the personal...',
           },
         ]}
       </Block>
     );
 
-    const Features = () => (
-      <Block layout="fourColumn">
+    const Features1 = () => (
+      <Block layout="threeColumn">
         {[
           {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
+            content: 'Journal entries are stored in **plain text** on your local file system and written with markdown and yaml front matter. **No databases or proprietary file formats are used.** Your entries are readily accessible and will never become unreadable from obsolescence. For extra security, you can [encrypt your entries](/docs/encryption).',
+            image: `${baseUrl}img/angle-bracket.svg`,
             imageAlign: 'top',
-            title: 'Feature One',
+            title: 'Markdown + Yaml',
           },
           {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
+            content: 'Just [install and start writing](/docs/getting-started) with your favorite markdown editor. ([Typora](https://typora.io/) is highly recommended.)',
+            image: `${baseUrl}img/freedom.svg`,
             imageAlign: 'top',
-            title: 'Feature Two',
+            title: 'Free & Open Source',
+          },
+          {
+            content: 'Built with [PowerShell 6](https://github.com/PowerShell/PowerShell), which is compatible with Windows, OSX, and Linux. ',
+            image: `${baseUrl}img/computer.svg`,
+            imageAlign: 'top',
+            title: 'Cross-Platform',
+          },
+        ]}
+      </Block>
+    );
+
+    const Features2 = () => (
+      <Block layout="threeColumn">
+        {[
+          {
+            content: 'Tag your entries with keywords and `journal-cli` will dynamically index your journal, making it easy to find categorized sets of entries. The index can be sorted alphabetically or by count, and can be further manipulated with familiar PowerShell commands. Not a PowerShell afficionado? No problem! Check out the [list of recipes](/docs/recipes) here.',
+            image: `${baseUrl}img/tag.svg`,
+            imageAlign: 'top',
+            title: 'Taggable',
+          },
+          {
+            content: 'Write notes to your future self with `journal-cli`\'s unique "readme" feature. This allows you to specify either a specific future date or a duration such as "5 years" at which point you want to re-read your entry. Run `Get-ReadmeEntries` to return a list of all readme entries which have elapsed. In a future release, readme reminders will be proactive and automatic!',
+            image: `${baseUrl}img/clock.svg`,
+            imageAlign: 'top',
+            title: 'Letters To The Future',
+          },
+          {
+            content: 'A journal can contain your most intimate, private thoughts. Do you really want that in the cloud, stored insecurely, and vulnerable to hacking? Neither do I, which is why `journal-cli` stores files **offline** by default. Only you, dear user, can opt to synchronize your journal with a cloud based tool. (If you do, you are _highly_ encouraged to [encrypt](/docs/encryption) it first.)',
+            image: `${baseUrl}img/fingerprint.svg`,
+            imageAlign: 'top',
+            title: 'Privacy-Focused',
           },
         ]}
       </Block>
@@ -197,8 +223,9 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
-          <FeatureCallout />
+          <Features1 />
+          <Features2 />
+          {/* <FeatureCallout /> */}
           <LearnHow />
           <TryOut />
           <Description />

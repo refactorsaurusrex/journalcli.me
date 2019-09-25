@@ -21,9 +21,9 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'journalcli.me', // Title for your website.
-  tagline: 'Index your markdown-based journal with yaml front matter!',
-  url: 'https://your-docusaurus-test-site.com', // Your website URL
+  title: 'journal-cli', // Title for your website.
+  tagline: 'Index Your Markdown-Based Journal With Yaml Front Matter!',
+  url: 'https://journalcli.me', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -38,24 +38,23 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    {doc: 'getting-started', label: 'Docs'},
+    {href: 'https://github.com/refactorsaurusrex/journal-cli', label: 'GitHub'},
+    {href: 'https://refactorsaurusrex.com', label: 'Blog'},
   ],
 
   // If you have users set above, you add it here:
-  users,
+  // users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
-  favicon: 'img/favicon.ico',
+  headerIcon: 'img/notebook-32.png',
+  footerIcon: 'img/notebook-32.png',
+  favicon: 'img/notebook-16.png',
 
   /* Colors for website */
   colors: {
     primaryColor: '#28242c',
-    secondaryColor: '#1c191e',
+    secondaryColor: '#0084ff',
   },
 
   /* Custom fonts for website */
@@ -73,7 +72,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
+  copyright: `Copyright © ${new Date().getFullYear()} Nick Spreitzer`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
@@ -104,7 +103,7 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
+    repoUrl: 'https://github.com/refactorsaurusrex/journal-cli',
 };
 
 module.exports = siteConfig;
