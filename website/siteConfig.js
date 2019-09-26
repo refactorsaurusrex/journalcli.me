@@ -41,6 +41,8 @@ const siteConfig = {
     {doc: 'getting-started', label: 'Docs'},
     {href: 'https://github.com/refactorsaurusrex/journal-cli', label: 'GitHub'},
     {href: 'https://refactorsaurusrex.com', label: 'Blog'},
+    {href: 'https://twitter.com/intent/tweet?url=https%3A%2F%2Fjournalcli.me&text=Check%20out%20this%20neat%20command%20line%20journaling%20tool%20I%20found!', label: 'Tweet'},
+    {href: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjournalcli.me', label: 'Facebook Post'},
   ],
 
   // If you have users set above, you add it here:
