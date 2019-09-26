@@ -1,44 +1,59 @@
 /* your custom css */
-
-p a {
-  color: #0084ff;
-  text-decoration: underline;
-}
-
-p a:hover {
-  color: white;
-  background-color: #0084ff;
-}
-
 a.button {
   background-color: white;
 }
 
-h2 > small {
-  width: 50%;
-  color: white;
-  font-weight: bold;
-}
-
-.homeSplashFade {
-  background-color: #0084ff70
-}
-
-.projectTitle > small {
-  font-size: 110%;
-  font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.blockContent code {
-  text-align: left;
-}
-
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+  .wrapper.homeWrapper {
+    background-color: #0084ff70;
+  }
+
+  h2 > small {
+    color: white;
+    font-weight: bold;
+  }
+
+  .projectTitle > small {
+    font-size: 75%;
+    font-weight: bold;
+  }
+
+  .blockContent code {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
+  p a {
+    color: #0084ff;
+    text-decoration: underline;
+  }
+  
+  p a:hover {
+    color: white;
+    background-color: #0084ff;
+  }
+  
+  h2 > small {
+    width: 50%;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .homeSplashFade {
+    background-color: #0084ff70
+  }
+  
+  .projectTitle > small {
+    font-size: 110%;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .blockContent code {
+    text-align: left;
+  }
 }
 
 @media only screen and (max-width: 1023px) {
