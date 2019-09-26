@@ -118,7 +118,7 @@ class Index extends React.Component {
       <Block background="dark">
         {[
           {
-            content:"Use tags to categorize your entries. Use readme's to write notes to your future self. [Open a random](/docs/features#open-randomentry) entry to see what happened at some arbitrary point in the past. Never forget an important or not-so-important event again.",
+            content:"Use tags to categorize your entries. Use readme's to write notes to your future self. [Open a random entry](/docs/features#open-randomentry) to see what happened at some arbitrary point in the past. Never forget an important (or not-so-important) event again.",
             image: `${baseUrl}img/calendar.svg`,
             imageAlign: 'right',
             title: 'Keep track of your life over time.',
