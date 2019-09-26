@@ -105,7 +105,7 @@ class Index extends React.Component {
       <Block id="try">
         {[
           {
-            content:"`journal-cli` can serve as notebook for tracking anything you need at work, from summaries of 1:1 conversations to daily notes that can be later aggregated into a list of accomplishments. Use tags so you can quickly return all related entries in a single go. Use [encryption](/docs/encryption) to keep your notes private.",
+            content:"`journal-cli` can serve as a notebook for tracking anything you need at work, from summaries of 1:1 conversations to daily notes that can be later aggregated into a list of accomplishments. Use tags so you can quickly return all related entries in a single go. Use [encryption](/docs/encryption) to keep your notes private.",
             image: `${baseUrl}img/professional.svg`,
             imageAlign: 'left',
             title: '...and the professional.',
@@ -131,7 +131,7 @@ class Index extends React.Component {
       <Block background="light">
         {[
           {
-            content:"Take note of the little day-to-day events, right along with the bigger things, that make up your daily life today so you can reflect on them in the future. Think back 10 years... wouldn't it be interesting to glimpse into all the little things from that period that you've long since forgotten about? You don't have to write a daily essay; even a list of bullet points is all you need. \n\n ```plaintext\n# Wednesday, November 10 \n - Had breakfast with Nora this morning. Hadn't seen her in months.\n - Ran 10 miles at the trail downtown. My pace was a new personal best! \n- Watched two episodes of Blue Bloods with the wife. We're already on season 5.",
+            content:"Take note of the little day-to-day events, right along with the bigger things, that make up your daily life today so you can reflect on them in the future. Think back 10 years... wouldn't it be interesting to glimpse into all the little things from that period you've long since forgotten about? You don't have to write a daily essay, a list of bullet points is all you need. \n\n ```plaintext\n# Wednesday, November 10 \n - Had breakfast with Nora this morning. Hadn't seen her in months.\n - Ran 10 miles at the trail downtown. My pace was a new personal best! \n- Watched two episodes of Blue Bloods with the wife. We're already on season 5.",
             image: `${baseUrl}img/personal.svg`,
             imageAlign: 'right',
             title: 'For the personal...',
