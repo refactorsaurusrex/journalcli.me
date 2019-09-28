@@ -1,13 +1,16 @@
 {
   "docs": {
-    "Table of Contents": [
+    "Basic Usage": [
       "getting-started",
       "features",
       "recipes",
-      "encryption",
       "sync",
       "faq",
       "background"
+    ],
+    "Advanced Usage": [
+      "encryption",
+      "git"
     ]
   }
 }

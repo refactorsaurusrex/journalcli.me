@@ -1,7 +1,7 @@
 ---
 id: background
 title: The Origin of JournalCli
-sidebar_label: Background
+sidebar_label: Background Info
 ---
 
 Coming soon!
