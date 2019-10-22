@@ -1,8 +1,9 @@
 {
   "docs": {
-    "Basic Usage": [
+    "The Basics": [
       "getting-started",
       "features",
+      "complete-syntax",
       "recipes",
       "sync",
       "faq",
