@@ -144,19 +144,19 @@ class Index extends React.Component {
       <Block layout="threeColumn">
         {[
           {
-            content: '`journal-cli` stores journal entries in **plain text** on your local file system, written with markdown and yaml front matter. **No databases or proprietary file formats are used.** Your entries are readily accessible and will never become unreadable due to obsolescence. For extra security, you can [encrypt your entries](/docs/encryption).',
+            content: '`journal-cli` stores journal entries in **plain text** on your local file system, written with markdown and yaml front matter. **No databases or proprietary file formats are used.** Your entries are readily accessible and will never become unreadable due to obsolescence.',
             image: `${baseUrl}img/angle-bracket.svg`,
             imageAlign: 'top',
             title: 'Markdown + Yaml',
           },
           {
-            content: 'Just [install and start writing](/docs/getting-started) with your favorite markdown editor. ([Typora](https://typora.io/) is highly recommended.)',
+            content: 'Just [install and start writing](/docs/getting-started) with your favorite markdown editor. ([Typora](https://typora.io/) is highly recommended.) Missing a feature you wish it had? [Open an issue](https://github.com/refactorsaurusrex/journal-cli/issues) and let\'s talk about it. ',
             image: `${baseUrl}img/freedom.svg`,
             imageAlign: 'top',
             title: 'Free & Open Source',
           },
           {
-            content: 'Built with [PowerShell 6](https://github.com/PowerShell/PowerShell), which is compatible with Windows, OSX, and Linux. ',
+            content: 'Runs on [PowerShell 6](https://github.com/PowerShell/PowerShell), which is compatible with Windows, OSX, and Linux. ',
             image: `${baseUrl}img/computer.svg`,
             imageAlign: 'top',
             title: 'Cross-Platform',
