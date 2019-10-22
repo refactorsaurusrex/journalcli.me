@@ -4,4 +4,4 @@ title: The Origin of JournalCli
 sidebar_label: Background Info
 ---
 
-Coming soon!
+# How this project came about
