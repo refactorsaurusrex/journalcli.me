@@ -3,6 +3,16 @@ a.button {
   background-color: white;
 }
 
+p a, article a {
+  color: #0084ff;
+  text-decoration: underline;
+}
+
+p a:hover, article a:hover {
+  color: white;
+  background-color: #0084ff;
+}
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
   .wrapper.homeWrapper {
     background-color: #0084ff70;
@@ -24,16 +34,6 @@ a.button {
 }
 
 @media only screen and (min-width: 1024px) {
-  p a {
-    color: #0084ff;
-    text-decoration: underline;
-  }
-  
-  p a:hover {
-    color: white;
-    background-color: #0084ff;
-  }
-  
   h2 > small {
     width: 50%;
     color: white;
