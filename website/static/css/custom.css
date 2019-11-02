@@ -13,6 +13,15 @@ p a:hover, article  p > a:hover {
   background-color: #0084ff;
 }
 
+blockquote a {
+  text-decoration: underline;
+}
+
+blockquote a:hover {
+  text-decoration: none;
+  background-color: white;
+}
+
 @media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
   .wrapper.homeWrapper {
     background-color: #0084ff70;
