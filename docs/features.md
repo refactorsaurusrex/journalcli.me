@@ -4,7 +4,10 @@ title: Features Overview
 sidebar_label: Features Overview
 ---
 
-> Unless otherwise specified, all commands assume you are working in a PowerShell 6+ terminal window.
+> **Important Notes**
+>
+> - Unless otherwise specified, all commands assume you are working in a PowerShell 6+ terminal window.
+> -  "Cmdlet" is [PowerShell-specific term](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-6). Throughout this site, it is used interchangeably with the more the generic term "command". They are completely synonymous in this context.
 
 ## Creating Journal Entries
 
@@ -157,3 +160,9 @@ The best way to keep your journal safely backed up is to use a tool like [CrashP
 # Subsequent times, now that the path and password have been saved
 > Backup-Journal
 ```
+
+## Tracking Changes To Your Journal
+
+Every `journal-cli` command that alters your journal, such as creating new entries or renaming tags, automatically generates a permanent snapshot of your all journal files at that point in time. You can also create manual snapshots by running `Save-JournalSnapshot`. This allows you to view the complete editing history of every change ever made to your journal entries. It provides the ability to undo most unintended changes, such as a regrettable tag rename. And it's handy if you ever touch up older entries, because you can always see exactly what changes you made over time to specific entries. 
+
+This version history tracking functionality is facilitated by [integrated git source control](/docs/git). If you're fluent with git, all you need to know is that you can interact with your journal's history exactly as you would any other git repository. Just navigate to your journal's root directory and have at it! For those who are less familiar with git, just know that such knowledge is not essential to using `journal-cli`. Refer to the git integration page linked above and the [recipes page](/docs/recipes) for additional information and helpful tips. 
