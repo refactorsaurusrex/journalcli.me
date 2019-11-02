@@ -3,12 +3,12 @@ a.button {
   background-color: white;
 }
 
-p a, article a {
+p a, article p > a {
   color: #0084ff;
   text-decoration: underline;
 }
 
-p a:hover, article a:hover {
+p a:hover, article  p > a:hover {
   color: white;
   background-color: #0084ff;
 }
