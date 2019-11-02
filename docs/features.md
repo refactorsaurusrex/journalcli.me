@@ -21,11 +21,11 @@ Set-DefaultJournalLocation -Location 'C:\Path\To\Your\Journal'
 
 **Dates**
 
-Readme dates can be written in any standard format for the current culture of your machine. In the United States, for example, `October 26, 2019`, `10/26/2019`, and `10/26/19` are all valid formats. On a machine set to Geman culture, `26/10/2019` is a valid expression of "October 26 2019" but `10/26/2019` is not. Periods and dashes can be substituted for forward slashes. 
+Readme dates can be written in any standard format for the current culture of your machine. In the United States, for example, `October 26, 2019`, `10/26/2019`, and `10/26/19` are all valid formats. On a machine set to German culture, `26/10/2019` is a valid expression of "October 26 2019" but `10/26/2019` is not. Periods and dashes can be substituted for forward slashes. 
 
 **Durations**
 
-Readme durations are written in the format of "[integer] [years|months|weeks|days]", so `1 year`, `15 months`, `6 weeks`, and `1024 days` are all valid expressions. Only whole numbers can be used. Time periods can be either singlular or plural. 
+Readme durations are written in the format of "[integer] [years|months|weeks|days]", so `1 year`, `15 months`, `6 weeks`, and `1024 days` are all valid expressions. Only whole numbers can be used. Time periods can be either singular or plural. 
 
 ## Indexing Your Journal
 
@@ -109,7 +109,7 @@ To open a journal entry with your default markdown editor, the `Open-JournalEntr
   Open-JournalEntry
 ```
 
-A word of caution: be careful not to pipe in dozens or hundreds of journal entry references into the `Open-JournalEntry` command, lest you end up with dozens or hundres of markdown editor instances running on your machine. :)
+A word of caution: be careful not to pipe in dozens or hundreds of journal entry references into the `Open-JournalEntry` command, lest you end up with dozens or hundreds of markdown editor instances running on your machine. :)
 
 ### Reading Random Entries
 
@@ -117,7 +117,7 @@ Looking for a flash from the past? Run `Open-RandomJournalEntry` (alias `orj`) t
 
 ## Renaming Tags
 
-You can easily rename entry tags at any time using the `Rename-JournalTag` command. It takes two mandatory parameters, `-OldName` and `-NewName`, and one optional parameter, `-DryRun`. The `-DryRun` flag will generate a list of all entries that include the old tag, but doesn't modify any of the entries. It is highly recommended that you do a dry run before proceeding with the rename. Doing so will help ensure you don't unintentially edit any entries. That said, even if you regret the change, it's still easily reversable because all changes made by `journal-cli` are permanently logged using [git](/docs/git) version control. To safely undo an undesirable journal action - such as renaming tags - all you have to do is navigate to your journal's root directory in your terminal, and revert the appropriate commit:
+You can easily rename entry tags at any time using the `Rename-JournalTag` command. It takes two mandatory parameters, `-OldName` and `-NewName`, and one optional parameter, `-DryRun`. The `-DryRun` flag will generate a list of all entries that include the old tag, but doesn't modify any of the entries. It is highly recommended that you do a dry run before proceeding with the rename. Doing so will help ensure you don't unintentionally edit any entries. That said, even if you regret the change, it's still easily reversible because all changes made by `journal-cli` are permanently logged using [git](/docs/git) version control. To safely undo an undesirable journal action - such as renaming tags - all you have to do is navigate to your journal's root directory in your terminal, and revert the appropriate commit:
 
 ```powershell
 > Rename-JournalTag -OldTag 'exercise' -NewTag 'runnnnering'
@@ -137,3 +137,23 @@ e429ec5 PRE: Add new journal entry
 ```
 
 Be sure to read the [git documentation page](/docs/git) for more information. 
+
+## Backing Up Your Journal
+
+### First, a philosophical statement
+
+`journal-cli` maintains a single copy of all your journal files. Unless you back it up, _you will lose your entire journal if your hard drive suffers a catastrophic failure_. This can include a fire that destroys your home. Or a flood. Or ransomware that encrypts all the files on your system. Don't take any chances with your important files, be they journal entries, family photos, or tax documents. And [don't be fooled](https://lifehacker.com/psa-dropbox-shouldnt-be-your-sole-backup-for-your-file-1612803794) into thinking that cloud storage counts as a robust backup solution. 
+
+The best way to keep your journal safely backed up is to use a tool like [CrashPlan](https://www.crashplan.com), which will automatically back up changes to your files as often as every 15 minutes. There are other similar tools out there - such as [BackBlaze](https://www.backblaze.com/version-history.html) - but I can personally vouch for CrashPlan. In 2017 my mother's computer was infected by ransomware, which encrypted all the files on her computer. If it wasn't for the fact that we could restore her files from a date and time *prior* to the infection, they all would have been permanently lost. CrashPlan made recovery a simple matter, and she only lost - at most - a few hours of work. I've had CrashPlan installed on all my personal computers ever since. If you don't use a backup tool with this degree of granular version history, you should really get one.
+
+### Backup Commands
+
+`journal-cli` can create a backup copy of your entire journal using the `Backup-Journal` command. Use the required `-BackupLocation` parameter to indicate where you'd like your backup files stored. This path can be saved for future use with the `-SaveParameters` switch. Running the command will copy all entries from your journal into a zip file - named according to the current date and time - and save it in the specified directory. Use the `-Password` parameter to password protect the resulting zip file. This, too, can be saved for future use. (Note: this password, along with all other settings, are encrypted and stored locally on your computer.) If you choose to save the backup location, you can then run `Open-BackupLocation` to display the directory in your system's file viewer. Ideally, backups should be located on a different physical disk from your normal journal files. If desired, you could create a scheduled task on your computer to run `Backup-Journal` on a regular basis. 
+
+```powershell
+# First time
+> Backup-Journal -BackupLocation 'D:\Backups\Journal' -Password 'secret' -SaveParameters
+
+# Subsequent times, now that the path and password have been saved
+> Backup-Journal
+```
