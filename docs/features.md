@@ -169,5 +169,5 @@ This version history tracking functionality is facilitated by [integrated git so
 
 ## A Note About Performance
 
-`journal-cli` has only be tested with a few hundred files on a very fast machine. No deliberate efforts have been made to maximize performance. If you you use it with many thousands (or more!) of files and/or on a slower machine, your experience may vary. If you do experience any performance problems, please [open an issue](https://github.com/refactorsaurusrex/journal-cli/issues) so we can get it fixed.
+`journal-cli` has only be tested with a few hundred files on a very fast machine. No deliberate efforts have been made to maximize performance. If you use it with many thousands of files (or more!) and/or on a slower machine, your experience may vary. If you do notice any performance problems, please [open an issue](https://github.com/refactorsaurusrex/journal-cli/issues) so we can get it fixed.
 
