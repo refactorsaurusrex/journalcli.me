@@ -97,7 +97,7 @@ class Index extends React.Component {
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
         <h2>A command line tool, for journaling.</h2>
-        <MarkdownBlock>`journal-cli` makes it super easy to keep a well-organized journal that can be instantly indexed, searched, and browsed all from your terminal window. It's for anyone who likes writing with markdown, loves command line tools, and are highly averse to storing intimate information in the cloud unless it's encrypted.</MarkdownBlock>
+        <MarkdownBlock>`journal-cli` makes it super easy to keep a well-organized journal that can be instantly indexed, searched, and browsed all from your terminal window. It's for anyone who likes writing with markdown, loves command line tools, and is highly averse to storing intimate information in the cloud unless it's encrypted.</MarkdownBlock>
       </div>
     );
 
