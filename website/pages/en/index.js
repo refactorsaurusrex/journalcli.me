@@ -105,7 +105,7 @@ class Index extends React.Component {
       <Block id="try">
         {[
           {
-            content:"`journal-cli` can serve as a notebook for tracking anything you need at work, from summaries of 1:1 conversations to daily notes that can be later aggregated into a list of accomplishments. Use tags so you can quickly return all related entries in a single go. Use [encryption](/docs/encryption) to keep your notes private.",
+            content:"`journal-cli` can serve as a notebook for tracking anything you need at work, from summaries of 1:1 conversations to daily notes that can be later aggregated into a list of accomplishments. Add tags so you can quickly return all related entries in a single go. Use [encryption](/docs/encryption) to keep your notes private.",
             image: `${baseUrl}img/professional.svg`,
             imageAlign: 'left',
             title: '...and the professional.',
@@ -118,7 +118,7 @@ class Index extends React.Component {
       <Block background="dark">
         {[
           {
-            content:"Use tags to categorize your entries. Use readme's to write notes to your future self. [Open a random entry](/docs/features#open-randomentry) to see what happened at some arbitrary point in the past. Never forget an important (or not-so-important) event again.",
+            content:"Use tags to categorize your entries. Use readme's to write notes to your future self. [Open a random entry](/docs/features#reading-random-entries) to see what happened at some arbitrary point in the past. Never forget an important (or not-so-important) event again.",
             image: `${baseUrl}img/calendar.svg`,
             imageAlign: 'right',
             title: 'Keep track of your life over time.',
@@ -144,7 +144,7 @@ class Index extends React.Component {
       <Block layout="threeColumn">
         {[
           {
-            content: '`journal-cli` stores journal entries in **plain text** on your local file system, written with markdown and yaml front matter. **No databases or proprietary file formats are used.** Your entries are readily accessible and will never become unreadable due to obsolescence.',
+            content: 'Stores entries in **plain text** on your local file system, written with markdown and yaml front matter. **No databases or proprietary file formats.** Your entries are readily accessible and will never become unreadable due to obsolescence.',
             image: `${baseUrl}img/angle-bracket.svg`,
             imageAlign: 'top',
             title: 'Markdown + Yaml',
@@ -156,7 +156,7 @@ class Index extends React.Component {
             title: 'Free & Open Source',
           },
           {
-            content: 'Runs on [PowerShell 6](https://github.com/PowerShell/PowerShell), which is compatible with Windows, OSX, and Linux. ',
+            content: 'Runs on [PowerShell 6](https://github.com/PowerShell/PowerShell) or later, making it compatible with Windows, OSX, and Linux. ',
             image: `${baseUrl}img/computer.svg`,
             imageAlign: 'top',
             title: 'Cross-Platform',
@@ -169,16 +169,16 @@ class Index extends React.Component {
       <Block layout="threeColumn">
         {[
           {
-            content: 'Tag your entries with keywords and `journal-cli` will dynamically index your journal, making it easy to find categorized sets of entries. The index can be sorted alphabetically or by count, and can be further manipulated with familiar PowerShell commands. Not a PowerShell afficionado? No problem! Check out the [list of recipes](/docs/recipes) here.',
+            content: 'Tag your entries with keywords and `journal-cli` will dynamically index your journal, making it easy to find categorized sets of entries. The index can be sorted alphabetically or by count, and can be further manipulated with familiar PowerShell commands. Not a PowerShell afficionado? Check out [these recipes](/docs/recipes).',
             image: `${baseUrl}img/tag.svg`,
             imageAlign: 'top',
             title: 'Taggable',
           },
           {
-            content: 'Write notes to your future self with `journal-cli`\'s unique "readme" feature. This allows you to specify either a specific future date or a duration such as "5 years" at which point you want to re-read your entry. Run `Get-ReadmeEntries` to return a list of all readme entries which have elapsed. In a future release, readme reminders will be proactive and automatic!',
+            content: 'Write notes to your future self with `journal-cli`\'s unique "readme" feature which allows you to indicate a specific point in the future when you\'d like to re-read your entry. Run `Get-ReadmeEntries` to return a list of all readme entries which have elapsed. In a future release, readme reminders will be proactive and automatic!',
             image: `${baseUrl}img/clock.svg`,
             imageAlign: 'top',
-            title: 'Letters To The Future',
+            title: 'Notes To (Future) Self',
           },
           {
             content: 'A journal can contain your most intimate, private thoughts. Do you really want that in the cloud, stored insecurely, and vulnerable to hacking? Neither do I, which is why `journal-cli` stores files **offline** by default. Only you, dear user, can opt to synchronize your journal with a cloud based tool. (If you do, you are _highly_ encouraged to [encrypt](/docs/encryption) it first.)',
