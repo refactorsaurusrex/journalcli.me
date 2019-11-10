@@ -96,8 +96,8 @@ class Index extends React.Component {
       <div
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
+        <h2>A command line tool, for journaling.</h2>
+        <MarkdownBlock>`journal-cli` makes it super easy to keep a well-organized journal that can be instantly indexed, searched, and browsed all from your terminal window. It's for anyone who likes writing with markdown, loves command line tools, and are highly averse to storing intimate information in the cloud unless it's encrypted.</MarkdownBlock>
       </div>
     );
 
@@ -223,9 +223,9 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
+          <FeatureCallout />
           <Features1 />
           <Features2 />
-          {/* <FeatureCallout /> */}
           <LearnHow />
           <TryOut />
           <Description />
