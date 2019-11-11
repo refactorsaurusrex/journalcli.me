@@ -44,7 +44,7 @@ Set-DefaultJournalLocation <PATH_TO_YOUR_JOURNAL>
 
 Now you can just type `New-JournalEntry` or, better yet, simply `nj`. 
 
-### Tags & Readme's
+### Tags and Readme's
 
 The `New-JournalEntry` command has two other parameters you should know about: `-Tags` and `-Readme`. The first takes an array of strings which represent tags to apply to your entry:
 

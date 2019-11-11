@@ -7,7 +7,7 @@ sidebar_label: Features Overview
 > **Important Notes**
 >
 > - Unless otherwise specified, all commands assume you are working in a PowerShell 6+ terminal window.
-> -  "Cmdlet" is [PowerShell-specific term](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-6). Throughout this site, it is used interchangeably with the more the generic term "command". They are completely synonymous in this context.
+> -  "Cmdlet" is a [PowerShell-specific term](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-6). Throughout this site, it is used interchangeably with the more the generic term "command". They are completely synonymous in this context.
 
 ## Creating Journal Entries
 
