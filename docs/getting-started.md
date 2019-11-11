@@ -68,7 +68,7 @@ The other parameter, `-Readme`, allows you to provide a specific date in the fut
 
 Of course, you can also just run `nj` without any parameters and then later manually add tags and/or a readme date. But using the `New-JournalEntry` parameters ensures that your front matter is correctly formatted which is important for indexing and searching.
 
-### Indexing & Searching
+### Indexing and Searching
 
 Okay, so you've been journaling for a while now. You've got scores of entries written, each of which has been diligently tagged. How do you find them again? 
 

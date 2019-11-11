@@ -62,7 +62,7 @@ Tags       : {coding, work}
 # 2. Format-List is not required, but it made this output easier to read here. :)
 ```
 
-## Opening & Reading Entries
+## Opening and Reading Entries
 
 ### Viewing Entries On Disk
 
