@@ -1,7 +1,7 @@
 ---
 id: git
 title: Git
-sidebar_label: git
+sidebar_label: Git Integration
 ---
 
 Coming soon!

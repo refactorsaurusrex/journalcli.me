@@ -4,14 +4,14 @@
       "getting-started",
       "features",
       "complete-syntax",
-      "recipes",
+      "encryption",
       "sync",
+      "git"
+    ],
+    "Beyond The Basics": [
+      "recipes",
       "faq",
       "background"
-    ],
-    "Advanced Usage": [
-      "encryption",
-      "git"
     ]
   }
 }

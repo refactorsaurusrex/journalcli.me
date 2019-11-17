@@ -4,8 +4,6 @@ title: Recipes
 sidebar_label: Recipes
 ---
 
-## Head up!
-
 > The examples below frequently use aliases for the sake of brevity. Short commands are emphasized here because the goal is to teach fast and easy manipulation of your journal. If you don't know what an alias is, just run `Get-Alias <name>` in your terminal to get the definition. If you're not familiar with the definition either, then [google](https://duckduckgo.com/?ratb=e) is your friend. ;)
 
 ## Paginate through a filtered list of entries
