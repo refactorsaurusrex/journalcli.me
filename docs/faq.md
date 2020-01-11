@@ -4,6 +4,10 @@ title: FAQ
 sidebar_label: FAQ
 ---
 
+## How can I be notified of new journal-cli releases?
+
+Head over to the `journal-cli` [GitHub page](https://github.com/refactorsaurusrex/journal-cli) and select "Releases Only" from the "Watching" menu in the upper right corner. Instructions can be found [here](https://help.github.com/en/github/receiving-notifications-about-activity-on-github/watching-and-unwatching-releases-for-a-repository#watching-releases-for-a-repository). 
+
 ## How can I change the number of entries shown in index results?
 
 When you run `Get-JournalIndex` or `Get-JournalEntriesByTag`, you may see results like this:
