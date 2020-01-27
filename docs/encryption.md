@@ -72,4 +72,4 @@ Once your container is mounted, it's very easy to forget to *dismount* it. There
 6. Force auto-dismount even if volume contains open files or directories. 
 
 <hr />
-\*  "Everything" is window-specific, but I'm sure there are similar tools for Mac and Linux. 
+* "Everything" is window-specific, but I'm sure there are similar tools for Mac and Linux. 
