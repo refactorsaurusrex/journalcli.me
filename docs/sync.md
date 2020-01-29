@@ -28,7 +28,11 @@ Now you can run `git push -u [NAME] master` to copy your journal to the server. 
 
 ## P2P Sync Tools
 
-A safer alternative to Cloud synchronization is to use a peer to peer sync tool, like [Resilio Sync](https://www.resilio.com/individuals/). Tools like these do not store your data on third party servers. Instead, they move files directly between two computers. The downside, of course, is that all computers must be simultaneously running in order to synchronize files between them. If that's an acceptable trade-off, then Resilio Sync is highly recommended - especially over unencrypted cloud storage providers. 
+A safer alternative to Cloud synchronization is to use a peer to peer sync tool, like [Resilio Sync](https://www.resilio.com/individuals/). Tools like these do not store your data on third party servers. Instead, they move files directly between two or more computers. The downside, of course, is that all computers must be simultaneously running in order to synchronize files between them. If that's an acceptable trade-off, then Resilio Sync is highly recommended - especially over unencrypted cloud storage providers. However, **do not attempt to two-way sync your raw journal files**. This will very likely corrupt your git history. Instead, you should use one of the following two strategies.
+
+**If you are using VeraCrypt and only need to synchronize the encrypted container file**, you can use two-way sync safely as long as you only mount the container on one machine at at time. If you mount the encrypted container simultaneously on more than  one computer and also simultaneously edit the contents of the containers, the last computer to dismount the container will overwrite all changes made on other computers. In other words, the last man in wins. 
+
+**If you are not using VeraCrypt**, you cannot use two-way sync. Instead, you should use one-way sync to copy journal entries made on a secondary computer over to your primary machine. The target directory on your primary machine must be different than your journal's root directory. Once the entries have been copied from your secondary machine to your primary one, you can then manually move them to the appropriate date-based subdirectory within your journal's root directory. This process is very hacky, I realize, but it is only presented as an option. Before considering this option, take a closer look at using Keybase to sync your journal. By every measure, it's a superior approach to what's described in this paragraph. 
 
 ## Mobile
 
