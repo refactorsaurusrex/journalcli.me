@@ -6,7 +6,7 @@ sidebar_label: FAQ
 
 ## I love (or hate) this tool and want to provide feedback!
 
-Great! I'm glad to hear that `journal-cli` evoked a strong emotional response. There are several avenues available to provide feedback. You ran write a review on [alternativeto.net](https://alternativeto.net/software/journal-cli/reviews/). You can open a [GitHub issue](https://github.com/refactorsaurusrex/journal-cli/issues/new/choose). You can chat in [the gitter room](https://gitter.im/journal-cli/community). Or you can email the developer directly at nick@200-ok.com. 
+Great! I'm glad to hear that `journal-cli` evoked a strong emotional response. There are several avenues available to provide feedback. You ran write a review on [alternativeto.net](https://alternativeto.net/software/journal-cli/reviews/). You can open a [GitHub issue](https://github.com/refactorsaurusrex/journal-cli/issues/new/choose). You can chat in [the gitter room](https://gitter.im/journal-cli/community). Or you can email the developer directly at hi@journalcli.me.  
 
 ## How can I be notified of new journal-cli releases?
 
