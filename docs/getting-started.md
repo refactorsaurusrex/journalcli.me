@@ -8,14 +8,15 @@ sidebar_label: Getting Started
 
 ## Quick Start
 
-1. Install the [latest version of PowerShell](https://github.com/PowerShell/PowerShell/releases/latest) for your system.
-2. Install [the latest version of journal-cli](https://www.powershellgallery.com/packages/JournalCli): `Install-Module JournalCli`
-3. Restart your PowerShell terminal.
-4. Run `New-JournalEntry -Location C:\PathToYour\Journal` and start writing! (Use a path that's appropriate for your OS, obviously.)
+1. Ensure you have a default application set for `.md` files. 
+2. Install the [latest version of PowerShell](https://github.com/PowerShell/PowerShell/releases/latest) for your system.
+3. Install [the latest version of journal-cli](https://www.powershellgallery.com/packages/JournalCli): `Install-Module JournalCli`
+4. Restart your PowerShell terminal.
+5. Run `New-JournalEntry -Location C:\Path\To\Your\Journal` and start writing! The path can be any directory on your system where you'd like to store your journal entries. Use a path that's appropriate for your operating system.
 
 ## Updates & Release Notes
 
-`journal-cli` is very actively developed and new versions are released frequently. To get the latest version, run `Update-Module JournalCli` and restart your terminal. To view a history of changes, look at the list of [closed pull requests](https://github.com/refactorsaurusrex/journal-cli/pulls?q=is%3Apr+is%3Aclosed) and/or the [commit history](https://github.com/refactorsaurusrex/journal-cli/commits/master). Every merged pull request deploys a new version to the [PowerShell Gallery](https://www.powershellgallery.com/packages/JournalCli). 
+`journal-cli` is actively developed and new versions are released frequently. By default, the application will check for updates every seven days. If one is available, it will be installed automatically. You can delay this automatic check by running [Suspend-JournalCliUpdateChecks](https://github.com/refactorsaurusrex/journal-cli/wiki/Suspend-JournalCliUpdateChecks). You can also manually install an update by running `Update-Module JournalCli` and restarting your terminal. To view a history of changes, look at the the [release history](https://github.com/refactorsaurusrex/journal-cli/releases) in GitHub.
 
 ## Basic Usage
 
@@ -27,19 +28,22 @@ sidebar_label: Getting Started
 
 ### Your First Journal Entry
 
-First things first. Before using `journal-cli`, you must have a default application registered on your system for `.md` files. This is because `journal-cli` assumes all journal entries are written to files with a `.md` file extension. Other file types are ignored. Also, some commands will attempt to open journal files for you - which obviously won't work if a default application isn't set on your machine. [Typora](https://www.typora.io/) is highly recommended, but you can use any text editor you prefer.
+First things first. Before using `journal-cli`, you must have a default application registered on your system for `.md` files. This is because `journal-cli` assumes all journal entries are written to files with a `.md` file extension. Other file types are ignored. Also, some commands will attempt to open journal files for you; this obviously won't work if a default application isn't set on your machine. [Typora](https://www.typora.io/) is highly recommended, but you can use any editor you prefer.
 
 Once that's done, let's create a journal entry:
 
 ```powershell
-New-JournalEntry -Location C:\PathToYour\Journal # On Windows
-New-JournalEntry -Location /Users/You/YourJournal # Mac or Linux
+New-JournalEntry -Location C:\Path\To\Your\Journal # On Windows
+# OR!
+New-JournalEntry -Location /Users/You/Your/Journal # Mac or Linux
 ```
 
-The path to your journal is completely arbitrary; it can be wherever you want. This command will create an entry for today and open it for editing. That's nice and all, but you really don't want to type all that every time you want to write a new journal entry. So let's save that location for future use: 
+The path to your journal is completely arbitrary; it can be wherever you want. The command above will create an entry for today and open it for editing. That's nice and all, but you really don't want to type *all* that out every time you want to write a journal entry. So let's save that location for future use: 
 
 ```powershell
 Set-DefaultJournalLocation <PATH_TO_YOUR_JOURNAL>
+# Where <PATH_TO_YOUR_JOURNAL> is your desired, operating-specific 
+# journal path.
 ```
 
 Now you can just type `New-JournalEntry` or, better yet, simply `nj`. 
@@ -64,13 +68,13 @@ tags:
 # Saturday, October 12, 2019
 ```
 
-The other parameter, `-Readme`, allows you to provide a specific date in the future when you'd like to re-read the entry. You can pass in either a specific date such as `1/2/2025` or a duration like `5 years`, which is based on the date of the entry. 
+The other parameter, `-Readme`, allows you to provide a specific date in the future when you'd like to re-read the entry. You can pass in either a specific date such as `1/2/2025` or a duration like `5 years`, which will calculate a date based on when the entry was originally written. 
 
-Of course, you can also just run `nj` without any parameters and then later manually add tags and/or a readme date. But using the `New-JournalEntry` parameters ensures that your front matter is correctly formatted which is important for indexing and searching.
+Of course, you can also just run `nj` without any parameters and then later manually add tags and/or a readme date. However, using the `New-JournalEntry` parameters ensures that your front matter is correctly formatted which is important for indexing and searching.
 
 ### Indexing and Searching
 
-Okay, so you've been journaling for a while now. You've got scores of entries written, each of which has been diligently tagged. How do you find them again? 
+Okay, so you've been journaling for a while now. You've written scores of entries, each of which has been diligently tagged. How do you find them again? 
 
 For a complete index of your entire journal, run `Get-JournalIndex`. This command will parse every entry in your journal, dynamically generate an index, and display the results.
 
@@ -113,3 +117,7 @@ vacation        1 {2019.10.11}
 ```
 
 In this case, there is only one entry that contains both the `work` and `vacation` tags. That entry is also tagged `big-event` and `coding`, both of which are displayed in the results. 
+
+## Built-in Help
+
+`journal-cli` comes with extensive help documentation which can be read directly from your terminal. Just run `help <CMDLET_NAME>` to display details about a specific cmdlet. For example, `help New-JournalEntry` will show all the documentation for the `New-JournalEntry` cmdlet. To display a list of all available cmdlets, run `Get-Command -Module JournalCli`. 
