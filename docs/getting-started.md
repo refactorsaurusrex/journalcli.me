@@ -10,13 +10,9 @@ sidebar_label: Getting Started
 
 1. Ensure you have a default application set for `.md` files. 
 2. Install the [latest version of PowerShell](https://github.com/PowerShell/PowerShell/releases/latest) for your system.
-3. Install [the latest version of journal-cli](https://www.powershellgallery.com/packages/JournalCli): `Install-Module JournalCli`
+3. Install the [latest version of journal-cli](https://www.powershellgallery.com/packages/JournalCli): `Install-Module JournalCli`
 4. Restart your PowerShell terminal.
 5. Run `New-JournalEntry -Location C:\Path\To\Your\Journal` and start writing! The path can be any directory on your system where you'd like to store your journal entries. Use a path that's appropriate for your operating system.
-
-## Updates & Release Notes
-
-`journal-cli` is actively developed and new versions are released frequently. By default, the application will check for updates every seven days. If one is available, it will be installed automatically. You can delay this automatic check by running [Suspend-JournalCliUpdateChecks](https://github.com/refactorsaurusrex/journal-cli/wiki/Suspend-JournalCliUpdateChecks). You can also manually install an update by running `Update-Module JournalCli` and restarting your terminal. To view a history of changes, look at the the [release history](https://github.com/refactorsaurusrex/journal-cli/releases) in GitHub.
 
 ## Basic Usage
 
@@ -121,3 +117,7 @@ In this case, there is only one entry that contains both the `work` and `vacatio
 ## Built-in Help
 
 `journal-cli` comes with extensive help documentation which can be read directly from your terminal. Just run `help <CMDLET_NAME>` to display details about a specific cmdlet. For example, `help New-JournalEntry` will show all the documentation for the `New-JournalEntry` cmdlet. To display a list of all available cmdlets, run `Get-Command -Module JournalCli`. 
+
+## Updates & Release Notes
+
+`journal-cli` is actively developed and new versions are released frequently. By default, the application will check for updates every seven days. If one is available, it will be installed automatically. You can delay this automatic check by running [Suspend-JournalCliUpdateChecks](https://github.com/refactorsaurusrex/journal-cli/wiki/Suspend-JournalCliUpdateChecks). You can also manually install an update by running `Update-Module JournalCli` and restarting your terminal. To view a history of changes, look at the the [release history](https://github.com/refactorsaurusrex/journal-cli/releases) in GitHub.
