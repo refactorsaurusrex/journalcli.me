@@ -12,20 +12,20 @@ Run this command to retrieve all entries tagged `work` and iterate through the c
 
 ```powershell
 Get-JournalEntriesByTag -Tags work -IncludeBodies | 
-	select -ExpandProperty entries | 
-	fl | 
-	more
+  select -ExpandProperty entries | 
+  fl | 
+  more
 ```
 
 ## Search for text within all entries
 
-This will search all journal entries for the word `vail` and display the results one page at a time. If the path to your journal is shorter than "(Get-DefaultJournalLocation)", you can just type the path instead. You could also omit `select LineNumber,Line,Filename` if you wanted, but the results will be a bit repetitive and verbose. 
+This will search all journal entries for the word `vail` and display the results one page at a time. You could omit `select LineNumber,Line,Filename` if you wanted, but the results will be a bit repetitive and verbose. 
 
 ```powershell
-gci -Path (Get-DefaultJournalLocation) -Filter "*.md" -Recurse | 
-	sls -Pattern 'vail' | 
-	select LineNumber,Line,Filename
-	fl | 
-	more
+Get-JournalFiles | 
+  sls -Pattern 'vail' | 
+  select LineNumber,Line,Filename |
+  fl | 
+  more
 ```
 

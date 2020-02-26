@@ -12,7 +12,7 @@ sidebar_label: Getting Started
 2. Install the [latest version of PowerShell](https://github.com/PowerShell/PowerShell/releases/latest) for your system.
 3. Install the [latest version of journal-cli](https://www.powershellgallery.com/packages/JournalCli): `Install-Module JournalCli`
 4. Restart your PowerShell terminal.
-5. Run `New-JournalEntry -Location C:\Path\To\Your\Journal` and start writing! The path can be any directory on your system where you'd like to store your journal entries. Use a path that's appropriate for your operating system.
+5. Run `New-JournalEntry -Location C:\Path\To\Your\Journal` and start writing! The path can be any directory on your system where you'd like to store your journal entries. (The example path above uses Window's format; be sure to change it to suit your operating system.)
 
 ## Basic Usage
 
@@ -24,32 +24,57 @@ sidebar_label: Getting Started
 
 ### Your First Journal Entry
 
+#### Prerequisites
+
 First things first. Before using `journal-cli`, you must have a default application registered on your system for `.md` files. This is because `journal-cli` assumes all journal entries are written to files with a `.md` file extension. Other file types are ignored. Also, some commands will attempt to open journal files for you; this obviously won't work if a default application isn't set on your machine. [Typora](https://www.typora.io/) is highly recommended, but you can use any editor you prefer.
 
-Once that's done, let's create a journal entry:
+#### Writing with a markdown editor
+
+To create a new journal entry for today and edit it with a markdown editor, run a command like this:
 
 ```powershell
-New-JournalEntry -Location C:\Path\To\Your\Journal # On Windows
-# OR!
-New-JournalEntry -Location /Users/You/Your/Journal # Mac or Linux
+New-JournalEntry -Location 'C:\Path\To\Your\Journal' -Tags work
+# The path structure you use may be different, depending on your 
+# operating system.
 ```
+**Pro tip:** You can use the alias `nj` in place of the full command name. 
 
-The path to your journal is completely arbitrary; it can be wherever you want. The command above will create an entry for today and open it for editing. That's nice and all, but you really don't want to type *all* that out every time you want to write a journal entry. So let's save that location for future use: 
+#### Writing in your terminal window
+
+To create a new journal entry for today directly from your terminal window, run a command like this:
 
 ```powershell
-Set-DefaultJournalLocation <PATH_TO_YOUR_JOURNAL>
-# Where <PATH_TO_YOUR_JOURNAL> is your desired, operating-specific 
-# journal path.
+Add-JournalEntryContent "Today I went skiing and it was nice." 
+  -Tags skiing,vacation
+  -Location 'C:\Path\To\Your\Journal'
+# The path structure you use may be different, depending on your 
+# operating system.
 ```
 
-Now you can just type `New-JournalEntry` or, better yet, simply `nj`. 
+**Pro tip:** You can use the alias `aje` in place of the full command name. 
+
+#### Setting a default journal path
+
+The path to your journal is completely arbitrary; it can be wherever you want it to be. Both example commands above would create an entry for today in the same location. That said, you really don't want to type out the full path to your journal every time you want to write a journal entry. Instead, you should save it as your default location: 
+
+```powershell
+Set-JournalDefaultLocation 'C:\Path\To\Your\Journal'
+# Once again, the path structure you use may be different, 
+# depending on your operating system.
+```
+
+Now you can omit the `-Location` parameter from both the `New-JournalEntry` and `Add-JournalEntryContent` cmdlets. 
 
 ### Tags and Readme's
 
-The `New-JournalEntry` command has two other parameters you should know about: `-Tags` and `-Readme`. The first takes an array of strings which represent tags to apply to your entry:
+> The `Add-JournalEntryContent` cmdlet does not yet support `-Readme` parameters. This will be added in an upcoming release. 
+
+The `New-JournalEntry` and `Add-JournalEntryContent` cmdlets have two other parameters you should know about: `-Tags` and `-Readme`. The first takes an array of strings which represent tags to apply to your entry:
 
 ```powershell
 nj -Tags running,work,shopping
+# Or!
+aje -Tags running,work,shopping
 ```
 
 This will create a new journal entry for today with yaml front matter, like this:
@@ -65,8 +90,6 @@ tags:
 ```
 
 The other parameter, `-Readme`, allows you to provide a specific date in the future when you'd like to re-read the entry. You can pass in either a specific date such as `1/2/2025` or a duration like `5 years`, which will calculate a date based on when the entry was originally written. 
-
-Of course, you can also just run `nj` without any parameters and then later manually add tags and/or a readme date. However, using the `New-JournalEntry` parameters ensures that your front matter is correctly formatted which is important for indexing and searching.
 
 ### Indexing and Searching
 

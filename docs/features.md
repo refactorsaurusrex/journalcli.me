@@ -11,12 +11,29 @@ sidebar_label: Features Overview
 
 ## Creating Journal Entries
 
-Run `New-JournalEntry`, or use the alias `nj`. A new journal entry will be created for today, and launched using the default application on your machine for `.md` files. Need to create an entry for a day other than today? Use the `DateOffset` parameter, which take a positive or negative number that represents the number of days to add or subtract from today. For example, `nj -DateOffset -1` will create an entry for yesterday.  To tag your entry use the `-Tags` parameter, which takes an array of string values and adds them to your entry as a yaml property. If you'd like to remind yourself to read an entry at some point in the future, use the `-Readme` parameter. This takes either a discrete date such as `3/30/2028` or a duration such as `6 years` and applies it to your entry as another yaml property. If neither the `-Tags` nor `-Readme` parameters are used, the new journal entry will be created with an empty yaml front matter block. This makes it easier to modify should you want to manually add tags or a readme date later. 
+### Option 1: Write with a markdown editor
 
-The instructions above assume you've already set a default journal location. If not, you must provide the location via the `-Location` parameter. However, unless you want to type that _every single time you create a new entry_, it's recommended that you set a default path:
+Run `New-JournalEntry`, or use the alias `nj`. A new journal entry will be created for today, and launched using the default application on your machine for `.md` files. Need to create an entry for a day other than today? Use the `DateOffset` parameter, which take a positive or negative number that represents the number of days to add or subtract from today. For example, `nj -DateOffset -1` will create an entry for yesterday. Or use the `-Date` parameter to specify an abitrary date. To tag your entry use the `-Tags` parameter, which takes an array of strings and adds them to your entry as a yaml property. If you'd like to remind yourself to read an entry at some point in the future, use the `-Readme` parameter. This takes either a discrete date such as `3/30/2028` or a duration such as `6 years` and applies it to your entry as another yaml property. If neither the `-Tags` nor `-Readme` parameters are used, the new journal entry will be created with a single, default tag: `(untagged)`. The default tag is automatically removed when any non-default tags are applied. Every entry must have at least one tag, or it will effectively be orphaned. Orphaned entries are ignored by most `journal-cli` cmdlets. You can, of course, also add or edit tags and readme yaml properties manually, if desired. Additional documentation for the `New-JournalEntry` cmdlet, including examples, can be found [here](https://github.com/refactorsaurusrex/journal-cli/wiki/New-JournalEntry). 
+
+The instructions above assume you've already set a default journal location. If not, you must provide the location via the `-Location` parameter. Unless you want to enter a `-Location` parameter _every single time you create a new entry_, it's recommended that you set a default path:
 
 ```powershell
-Set-DefaultJournalLocation -Location 'C:\Path\To\Your\Journal'
+Set-JournalDefaultLocation 'C:\Path\To\Your\Journal'
+# Use the path syntax appropriate for your operating system.
+```
+
+### Option 2: Write directly from the terminal
+
+> Note: This method does not currently have a `-Readme` parameter. It will be added in an upcoming release.
+
+Run `Add-JournalEntryContent`, or use the alias `aje`, to add content to today's journal entry. If an entry does not yet exist for today, one will be created. Use the `-Body` parameter to add text to the entry's body and the `-Tags` parameter to append additional tags. If no tags are specified for a new entry, it will be created with a single, default tag: `(untagged)`. The default tag is automatically removed when any non-default tags are applied. Every entry must have at least one tag, or it will effectively be orphaned. Orphaned entries are ignored by most `journal-cli` cmdlets. You can, of course, also add or edit tags and readme yaml properties manually, if desired. 
+
+By default, new body content is appended to `journal-cli`'s default date-based H1 header. To insert content under a different header, use the `-Header` parameter. If the specified header already exists, the content will be appended to it. If not, the header and the specified body content will be appended to the bottom of the entry. Need to create an entry for a day other than today? Use the `DateOffset` parameter, which take a positive or negative number that represents the number of days to add or subtract from today. For example, `nj -DateOffset -1` will create an entry for yesterday. Or use the `-Date` parameter to specify an abitrary date. Additional documentation for the `Add-JournalEntryContent` cmdlet, including examples, can be found [here](https://github.com/refactorsaurusrex/journal-cli/wiki/Add-JournalEntryContent). 
+
+The instructions above assume you've already set a default journal location. If not, you must provide the location via the `-Location` parameter. Unless you want to enter a `-Location` parameter _every single time you create a new entry_, it's recommended that you set a default path:
+
+```powershell
+Set-JournalDefaultLocation 'C:\Path\To\Your\Journal'
 # Use the path syntax appropriate for your operating system.
 ```
 
@@ -38,10 +55,10 @@ Run `Get-JournalIndex`  or `gji` to dynamically build an index of your entire jo
 
 ### Listing Readme Entries
 
-To review a list of entries which were flagged for you to re-read at a future date, run `Get-ReadmeEntries`. To use this, you must either use the `-All` switch - which, perhaps obviously, will return every single entry in your journal that contains a `readme` property. This can be useful, but over enough time it may result in a very long list. To restrict the list to a shorter time period, you can pass the `-Period` and `-Duration` parameters, as shown below. Periods can be `Days`, `Months`, or `Years` and the duration is any positive integer. 
+To review a list of entries which were flagged for you to re-read at a future date, run `Get-JournalReadmeEntries`. To use this, you must either use the `-All` switch - which, perhaps obviously, will return every single entry in your journal that contains a `readme` property. This can be useful, but over enough time it may result in a very long list. To restrict the list to a shorter time period, you can pass the `-Period` and `-Duration` parameters, as shown below. Periods can be `Days`, `Months`, or `Years` and the duration is any positive integer. 
 
 ```powershell
-> Get-ReadmeEntries -Period Years -Duration 1 | Format-List
+> Get-JournalReadmeEntries -Period Years -Duration 1 | Format-List
 
 ReadmeDate : Saturday, August 27, 2019
 Headers    : {## ReadMe:}
@@ -105,14 +122,13 @@ To open a journal entry with your default markdown editor, the `Open-JournalEntr
 > Get-JournalEntry '2019.02.05.md'
 > Get-Date -Year 2019 -Month 2 -Day 5 | Open-JournalEntry
 
-# This will open all entries tagged 'insomnia'. If you have frequent insomnia, you 
-# could end up with a huge number of markdown editor instances running. 
+# This will open all entries tagged 'insomnia', one at a time.
 > Get-JournalEntriesByTag -Tags insomnia | 
   select -ExpandProperty entries | 
-  Open-JournalEntry
+  Open-JournalEntry -Wait
 ```
 
-A word of caution: be careful not to pipe in dozens or hundreds of journal entry references into the `Open-JournalEntry` command, lest you end up with dozens or hundreds of markdown editor instances running on your machine. :)
+A word of caution: be careful not to pipe in dozens or hundreds of journal entry references into the `Open-JournalEntry` command without the `-Wait` switch enabled, lest you end up with dozens or hundreds of markdown editor instances running on your machine. :)
 
 ### Reading Random Entries
 
