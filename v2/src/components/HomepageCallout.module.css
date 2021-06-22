@@ -1,0 +1,19 @@
+@import url("../css/custom.css");
+
+.callout {
+  background-color:whitesmoke;
+}
+
+html[data-theme='dark'] .callout {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.centerRow {
+  justify-content: center;
+}
+
+.calloutText {
+  font-size: 1.2em;
+  font-style: italic;
+  line-height: 35px;
+}

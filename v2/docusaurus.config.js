@@ -9,7 +9,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/notebook-16.png',
   organizationName: 'refactorsaurusrex', // Usually your GitHub org/user name.
   projectName: 'journal-cli', // Usually your repo name.
   themeConfig: {
@@ -28,7 +28,7 @@ module.exports = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/refactorsaurusrex/journal-cli',
           label: 'GitHub',
           position: 'right',
         },
@@ -44,23 +44,35 @@ module.exports = {
               label: 'Tutorial',
               to: '/docs/intro',
             },
+            {
+              label: 'FAQ',
+              to: '/docs/faq',
+            },
+            {
+              label: 'Features',
+              to: '/docs/features',
+            },
+            {
+              label: 'Recipes',
+              to: '/docs/recipes',
+            },
           ],
         },
         {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'GitHub Discussions',
+              href: 'https://github.com/refactorsaurusrex/journal-cli/discussions',
             },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
+            // {
+            //   label: 'Discord',
+            //   href: 'https://discordapp.com/invite/docusaurus',
+            // },
+            // {
+            //   label: 'Twitter',
+            //   href: 'https://twitter.com/docusaurus',
+            // },
           ],
         },
         {
@@ -71,8 +83,8 @@ module.exports = {
               to: '/blog',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Project Roadmap',
+              href: 'https://github.com/refactorsaurusrex/journal-cli/projects/1',
             },
           ],
         },
@@ -92,13 +104,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/refactorsaurusrex/journal-cli/edit/master/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/refactorsaurusrex/journal-cli/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

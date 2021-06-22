@@ -4,32 +4,53 @@ import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Markdown + Yaml',
+    Svg: require('../../static/img/note.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Entries are stored in plain text on your local file system, written with markdown and yaml front matter. 
+        No databases or proprietary file formats. Your journal entries will never become 
+        unreadable due to obsolescence.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Taggable',
+    Svg: require('../../static/img/tag.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Tag your entries with keywords and journal-cli will dynamically index your journal, making it easy to find 
+        and read categorized sets of entries. The index can be further manipulated with common PowerShell commands.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    title: 'Cross Platform',
+    Svg: require('../../static/img/laptop.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Runs on Windows, Mac, and Linux.<a href="/docs/requirements">*</a>
+      </>
+    ),
+  },
+  {
+    title: 'End To End Encryption',
+    Svg: require('../../static/img/shield.svg').default,
+    description: (
+      <>
+        Journal entry files are <strong>stored offline by default</strong>. Users can optionally take advantage of 
+        journal-cli's new cloud synchronization feature, which encrypts all journal entry files locally and stores them in 
+        your own Amazon S3 bucket. <em>[Coming soon!]</em>
+      </>
+    ),
+  },
+  {
+    title: 'Version History',
+    Svg: require('../../static/img/schedule.svg').default,
+    description: (
+      <>
+        A complete version history is maintained of every journal entry that's synchronizized to the cloud. You can read previous versions, 
+        compare edits between arbitrary versions, or revert changes back to a previous version. <em>[Coming soon!]</em>
       </>
     ),
   },
@@ -53,7 +74,7 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className={`${styles.centerRow} row`}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
