@@ -58,7 +58,7 @@ const siteConfig = {
     primaryColor: '#28242c',
     secondaryColor: '#0084ff',
   },
-  editUrl: 'https://github.com/refactorsaurusrex/journal-cli-docs/edit/master/docs/',
+  editUrl: 'https://github.com/refactorsaurusrex/journalcli.me/edit/master/docs/',
   /* Custom fonts for website */
   /*
   fonts: {
