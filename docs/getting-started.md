@@ -4,7 +4,7 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-> Looking for detailed command line syntax? Check out the [journal-cli wiki](https://github.com/refactorsaurusrex/journal-cli/wiki) on GitHub. 
+> NOTE! This documentation is for journal-cli version 1, which is currently deprecated. Documentation for the latest version can be found [here](https://journalcli.app).
 
 ## Quick Start
 
