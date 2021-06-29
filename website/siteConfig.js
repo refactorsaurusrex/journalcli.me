@@ -23,14 +23,14 @@ const users = [
 const siteConfig = {
   title: 'journal-cli', // Title for your website.
   tagline: 'Index Your Markdown-Based Journal With Yaml Front Matter!',
-  url: 'https://journalcli.me', // Your website URL
+  url: 'https://v1.journalcli.app', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'journalcli.me',
+  projectName: 'journal-cli',
   organizationName: 'refactorsaurusrex',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
@@ -41,8 +41,8 @@ const siteConfig = {
     {doc: 'getting-started', label: 'Docs'},
     {href: 'https://github.com/refactorsaurusrex/journal-cli', label: 'GitHub'},
     {href: 'https://refactorsaurusrex.com', label: 'Blog'},
-    {href: 'https://twitter.com/intent/tweet?url=https%3A%2F%2Fjournalcli.me&text=Check%20out%20this%20neat%20command%20line%20journaling%20tool%20I%20found!', label: 'Tweet'},
-    {href: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjournalcli.me', label: 'Facebook Post'},
+    {href: 'https://twitter.com/intent/tweet?url=https%3A%2F%2Fjournalcli.app&text=Check%20out%20this%20neat%20command%20line%20journaling%20tool%20I%20found!', label: 'Tweet'},
+    {href: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjournalcli.app', label: 'Facebook Post'},
   ],
 
   // If you have users set above, you add it here:
@@ -58,7 +58,7 @@ const siteConfig = {
     primaryColor: '#28242c',
     secondaryColor: '#0084ff',
   },
-  editUrl: 'https://github.com/refactorsaurusrex/journalcli.me/edit/master/docs/',
+  editUrl: 'https://github.com/refactorsaurusrex/journal-cli-docs/edit/master/docs/',
   /* Custom fonts for website */
   /*
   fonts: {
