@@ -2,3 +2,4 @@
   from = "https://journalcli.me/*"
   to = "https://v1.journalcli.app/:splat"
   status = 301
+  force = true
